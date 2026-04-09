@@ -11,6 +11,12 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6',
+        ]);
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -19,7 +25,10 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return response()->json($user);
+        return response()->json([
+            'message' => 'User created',
+            'user' => $user
+        ]);
     }
 
     public function login(Request $request)
