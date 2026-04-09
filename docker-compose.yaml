@@ -1,0 +1,52 @@
+services:
+
+    frontend:
+      build:
+        context: ./react-app
+      depends_on:
+        - backend
+      ports:
+        - "5173:5173"
+      volumes:
+      - ./react-app:/app
+      - /app/node_modules
+      networks:
+        - app-network
+
+    backend:
+      build:
+        context: ./laravel-app/
+      restart: unless-stopped
+      depends_on:
+        - appdb
+      environment:
+        DB_HOST: appdb
+        DB_DATABASE: ${DB_DATABASE}
+        DB_USERNAME: ${DB_USERNAME}
+        DB_PASSWORD: ${DB_PASSWORD}
+      working_dir: /var/www
+      volumes:
+        - ./laravel-app:/var/www
+      ports:
+        - "8000:8000"
+      networks:
+        - app-network
+
+    appdb:
+      image: mysql:latest
+      restart: unless-stopped
+      environment:
+        MYSQL_DATABASE: ${DB_DATABASE}
+        MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      volumes:
+        - mysql-data:/var/lib/mysql
+      ports:
+        - "3306:3306"
+      networks:
+        - app-network
+
+networks:
+  app-network:
+    
+volumes:
+  mysql-data:
