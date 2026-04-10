@@ -27,6 +27,7 @@ services:
       working_dir: /var/www
       volumes:
         - ./laravel-app:/var/www
+        - /var/www/vendor
       ports:
         - "8000:8000"
       networks:

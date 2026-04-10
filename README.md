@@ -20,7 +20,7 @@
 
 - **Base de données : MySQL**
 
-    -Stocke de manière persistante et sécurisée les informations des utilisateurs (nom, email, mot de passe haché).
+    - Stocke de manière persistante et sécurisée les informations des utilisateurs (nom, email, mot de passe haché).
 
 - **Infrastructure : Docker & Docker Compose**
 
@@ -45,26 +45,9 @@
 
     - Si succès : l'utilisateur est connecté (génération d'un token d'accès) et redirigé vers une page d'accueil protégée.
 
-## Étapes
-### 1. Configuration partie backend
-___
-Commande à executer pour l'installation des dépendances du [projet Laravel](/laravel-app/):
+## Configuration Docker
 
-```
-composer install
-```
-
-### 2. Configuration docker
-___
 Commande permettant à Docker de construire et exécuter les conteneurs dans la racine du projet:
 ```
 docker compose up --build
 ```
-
-### 3. Migration 
-___
-Execution de la première migration du projet Laravel:
-```
-docker compose exec backend php artisan migrate
-```
-### 4
