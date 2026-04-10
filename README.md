@@ -21,6 +21,7 @@
 - **Base de données : MySQL**
 
     - Stocke de manière persistante et sécurisée les informations des utilisateurs (nom, email, mot de passe haché).
+    - Stocke de manière persistante et sécurisée les informations des utilisateurs (nom, email, mot de passe haché).
 
 - **Infrastructure : Docker & Docker Compose**
 
