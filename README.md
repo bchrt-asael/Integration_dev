@@ -20,7 +20,7 @@
 
 - **Base de données : MySQL**
 
-    -Stocke de manière persistante et sécurisée les informations des utilisateurs (nom, email, mot de passe haché).
+    - Stocke de manière persistante et sécurisée les informations des utilisateurs (nom, email, mot de passe haché).
 
 - **Infrastructure : Docker & Docker Compose**
 
@@ -67,4 +67,3 @@ Execution de la première migration du projet Laravel:
 ```
 docker compose exec backend php artisan migrate
 ```
-### 4
