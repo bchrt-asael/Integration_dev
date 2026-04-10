@@ -45,3 +45,26 @@
 
     - Si succès : l'utilisateur est connecté (génération d'un token d'accès) et redirigé vers une page d'accueil protégée.
 
+## Étapes
+### 1. Configuration partie backend
+___
+Commande à executer pour l'installation des dépendances du [projet Laravel](/laravel-app/):
+
+```
+composer install
+```
+
+### 2. Configuration docker
+___
+Commande permettant à Docker de construire et exécuter les conteneurs dans la racine du projet:
+```
+docker compose up --build
+```
+
+### 3. Migration 
+___
+Execution de la première migration du projet Laravel:
+```
+docker compose exec backend php artisan migrate
+```
+### 4
