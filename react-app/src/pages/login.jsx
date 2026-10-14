@@ -32,16 +32,16 @@ function Login() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-xs">
-        <div className="mb-8 text-4xl font-bold text-center text-black">
+        <div className="mb-8 text-4xl font-bold text-center text-black dark:text-[var(--text-h)]">
           Connexion
         </div>
 
         <form
           onSubmit={handleLogin}
-          className="mb-4 rounded-lg bg-white px-8 pt-6 pb-8 shadow-md"
+          className="mb-4 rounded-lg bg-slate-50 px-8 pt-6 pb-8 shadow-md dark:bg-[var(--accent-bg)]"
         >
           <div className="mb-4">
-            <label className="mb-2 block text-sm font-bold text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-gray-700 dark:text-slate-300">
               Email
             </label>
             <input
@@ -50,12 +50,12 @@ function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
-              className="w-full rounded border px-3 py-2 text-white shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded border border-slate-300 bg-white px-3 py-2 text-slate-900 shadow placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:ring-indigo-400"
             />
           </div>
 
           <div className="mb-6">
-            <label className="mb-2 block text-sm font-bold text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-gray-700 dark:text-slate-300">
               Mot de passe
             </label>
             <input
@@ -64,7 +64,7 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="************"
-              className="w-full rounded border px-3 py-2 text-white shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded border border-slate-300 bg-white px-3 py-2 text-slate-900 shadow placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:ring-indigo-400"
             />
 
             {error && (
@@ -75,14 +75,14 @@ function Login() {
           <div className="flex items-center justify-between">
             <button
               type="submit"
-              className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 mr-3"
+              className="mr-3 rounded-lg bg-indigo-600 px-4 py-2 font-bold text-white transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-indigo-400 dark:focus:ring-offset-slate-900"
             >
               Se connecter
             </button>
 
             <a
               href="#"
-              className="text-sm text-center font-semibold text-blue-500 hover:text-blue-800"
+              className="text-sm text-center font-semibold text-blue-600 hover:text-blue-800"
             >
               Mot de passe oublié ?
             </a>
@@ -91,7 +91,7 @@ function Login() {
 
         <Link
           to="/register"
-          className="block text-center rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+          className="block rounded-lg bg-indigo-600 px-4 py-2 text-center font-bold text-white transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-indigo-400 dark:focus:ring-offset-slate-950"
         >
           Créer un compte
         </Link>
