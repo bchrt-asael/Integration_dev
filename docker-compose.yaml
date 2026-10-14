@@ -18,7 +18,8 @@ services:
         context: ./laravel-app/
       restart: unless-stopped
       depends_on:
-        - appdb
+        appdb:
+          condition: service_healthy
       environment:
         DB_HOST: appdb
         DB_DATABASE: ${DB_DATABASE}
@@ -45,6 +46,12 @@ services:
         - "3306:3306"
       networks:
         - app-network
+      healthcheck:
+        test: ["CMD-SHELL", "mysqladmin ping --host=127.0.0.1 --user=root --password=\"$${MYSQL_ROOT_PASSWORD}\" --silent"]
+        interval: 5s
+        timeout: 5s
+        retries: 12
+        start_period: 30s
 
 networks:
   app-network:
