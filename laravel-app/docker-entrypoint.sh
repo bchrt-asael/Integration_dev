@@ -1,7 +1,8 @@
 #!/bin/sh
 
-sleep 5
+set -eu
 
-php artisan migrate
+# Si la migration échoue, le backend s’arrête.
+php artisan migrate --force
 
-php artisan serve --host=0.0.0.0 --port=8000
+exec php artisan serve --host=0.0.0.0 --port=8000
