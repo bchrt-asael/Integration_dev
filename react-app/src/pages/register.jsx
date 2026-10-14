@@ -29,7 +29,6 @@ function Register() {
       console.log("REGISTER OK:", res.data);
 
       navigate("/");
-
     } catch (err) {
       console.error(err);
 
@@ -42,17 +41,16 @@ function Register() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-300">
+    <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-xs">
-
         <div className="mb-8 text-4xl font-bold text-center text-black">
           Inscription
         </div>
 
         <form
           onSubmit={handleRegister}
-          className="mb-4 rounded-lg bg-white px-8 pt-6 pb-8 shadow-md">
-
+          className="mb-4 rounded-lg bg-white px-8 pt-6 pb-8 shadow-md"
+        >
           <div className="mb-4">
             <label className="mb-2 block text-sm font-bold text-gray-700">
               Nom
@@ -62,7 +60,8 @@ function Register() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="w-full rounded border px-3 py-2 shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
-              type="text" />
+              type="text"
+            />
 
             {errors.name && (
               <p className="text-xs text-red-500">{errors.name[0]}</p>
@@ -78,7 +77,8 @@ function Register() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded border px-3 py-2 shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
-              type="email" />
+              type="email"
+            />
 
             {errors.email && (
               <p className="text-xs text-red-500">{errors.email[0]}</p>
@@ -94,7 +94,8 @@ function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full rounded border px-3 py-2 shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
-              type="password" />
+              type="password"
+            />
 
             {errors.password && (
               <p className="text-xs text-red-500">{errors.password[0]}</p>
@@ -109,10 +110,10 @@ function Register() {
 
           <button
             type="submit"
-            className="w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
+            className="w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+          >
             S'inscrire
           </button>
-
         </form>
       </div>
     </div>
